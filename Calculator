@@ -1,0 +1,118 @@
+#include <stdio.h>
+#include <math.h>
+int sum(int a, int b);
+int sub(int a, int b);
+int mul(int a, int b);
+int div(int a, int b);
+int rem(int a, int b);
+int squ(int a, int b);
+int root(float a, float b);
+// decision making
+int main(int argc, char const *argv[])
+{
+   for (int i = 0; i < 10; i++)
+   {
+      int a, b, operator;
+
+      printf("Hello in My Virtual Calculator\n");
+      printf("Please Enter The Two Number: ");
+      scanf("%d %d", &a, &b);
+      printf("Enter The Operator\n");
+      scanf("%d", &operator);
+      switch (operator)
+      {
+      case 1:
+         printf("Your Sum is: %d\n", sum(a, b));
+         break;
+      case 2:
+         printf("Your Subtraction is: %d\n", sub(a, b));
+         break;
+      case 3:
+         printf("Your multiplication is: %d\n", mul(a, b));
+         break;
+      case 4:
+         if (b == 0 || b > a)
+         {
+            printf("Please enter the valid 'b' valu.\n ");
+         }
+         else
+         {
+            printf("Your Division is: %d\n", div(a, b));
+         }
+         break;
+      case 5:
+         if (b == 0 || b > a)
+         {
+            printf("Enter The Valid 'b' number");
+         }
+         else
+         {
+            printf("Your Remainder is: %d\n", rem(a, b));
+         }
+         break;
+      case 6:
+         printf("Your tothepower is: %d\n", squ(a, b));
+         break;
+      case 7:
+         printf("Your Square root valu is: ");
+         root(a, b);
+         break;
+      default:
+         printf("Please Enter The Valid Number\n");
+         break;
+      }
+      char told;
+      printf("want to calculate again\nIf you want press 'Y' or 'N'\n please press: ");
+      scanf("%s", &told);
+      if (told == 'Y' || told == 'y')
+      {
+         continue;
+      }
+      else if (told == 'N' || told == 'n')
+      {
+         break;
+      }
+   }
+   return 0;
+}
+
+// Addition
+int sum(int a, int b)
+{
+   return a + b;
+}
+// subtraction
+int sub(int a, int b)
+{
+   return a - b;
+}
+// multiplication
+int mul(int a, int b)
+{
+   return a * b;
+}
+// division
+int div(int a, int b)
+{
+   return a / b;
+}
+// remainder
+int rem(int a, int b)
+{
+   return a % b;
+}
+// powring
+int squ(int a, int b)
+{
+   int c;
+   c = pow(a, b);
+   return c;
+}
+// root
+int root(float a, float b)
+{
+   float c1, c2;
+   c1 = (float)sqrt(a);
+   c2 = (float)sqrt(b);
+   printf("%.2f %.2f", c1, c2);
+}
